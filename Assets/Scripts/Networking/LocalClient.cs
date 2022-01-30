@@ -3,6 +3,7 @@ using RiptideNetworking;
 using RiptideNetworking.Utils;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LocalClient : MonoBehaviour
@@ -79,5 +80,12 @@ public class LocalClient : MonoBehaviour
     {
         Debug.Log("Disconnected");
         UIManager.Instance.BackToMain();
+    }
+
+    [MessageHandler((ushort)Packets.HostToClientId.gameStarted)]
+    private static void SpawnPlayer(Message message)
+    {
+        SceneManager.LoadScene("Top Down Movement");
+        Handler.Instance.SpawnPlayer();
     }
 }

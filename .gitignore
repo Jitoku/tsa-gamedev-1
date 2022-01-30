@@ -25,6 +25,7 @@
 
 # Visual Studio cache directory
 .vs/
+.vscode/
 
 # Gradle cache directory
 .gradle/
@@ -60,6 +61,7 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
+*.exe
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -78,3 +80,5 @@ TextMesh Pro/
 # Where Builds Are Located Packages
 
 Builds/
+
+UserSettings/
