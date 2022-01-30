@@ -20,8 +20,14 @@ public class Packets
     [MessageHandler((ushort)HostToClientId.playerMovement)]
     private static void ReceiveMovement(Message message)
     {
-        Debug.Log("Got Packet!");
-        Handler.Instance.players[(int)PeerType.type].transform.position = message.GetVector3();
-        Handler.Instance.players[(int)PeerType.type].transform.rotation = message.GetQuaternion();
+        Handler.Instance.players[(int)PeerType.otherType].transform.position = message.GetVector3();
+        Handler.Instance.players[(int)PeerType.otherType].transform.rotation = message.GetQuaternion();
+    }
+
+    [MessageHandler((ushort)HostToClientId.playerMovement)]
+    private static void ReceiveMovement2(ushort a, Message message)
+    {
+        Handler.Instance.players[(int)PeerType.otherType].transform.position = message.GetVector3();
+        Handler.Instance.players[(int)PeerType.otherType].transform.rotation = message.GetQuaternion();
     }
 }

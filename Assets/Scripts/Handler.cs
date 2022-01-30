@@ -11,7 +11,7 @@ public class Handler : MonoBehaviour
     [SerializeField]
     private GameObject OtherPlayerPrefab;
 
-    public List<Player> players = new List<Player>();
+    public List<Player> players = new List<Player>(2);
     private static Handler _singleton;
     public static Handler Instance
     {
@@ -39,7 +39,6 @@ public class Handler : MonoBehaviour
         Host.Instance.SendGameStartedDialog();
         StartCoroutine(WaitFrame());
     }
-
     IEnumerator WaitFrame()
     {
         yield return null;

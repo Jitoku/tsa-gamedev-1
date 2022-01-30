@@ -14,6 +14,7 @@ public class PeerType
     }
 
     public static GamePeerType type;
+    public static GamePeerType otherType;
 
 }
 

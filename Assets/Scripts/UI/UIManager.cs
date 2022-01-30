@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
     public void HostGame()
     {
         PeerType.type = PeerType.GamePeerType.host;
+        PeerType.otherType = PeerType.GamePeerType.client;
         gameObject.AddComponent<Host>();
         WelcomePanel.SetActive(false);
         HostWait.SetActive(true);
@@ -62,6 +63,7 @@ public class UIManager : MonoBehaviour
     public void JoinGame()
     {
         PeerType.type = PeerType.GamePeerType.client;
+        PeerType.otherType = PeerType.GamePeerType.host;
         gameObject.AddComponent<LocalClient>();
         Debug.Log("ChooseAdalah?");
         if (IPField.text == string.Empty)
